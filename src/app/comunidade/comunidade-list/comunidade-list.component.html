@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+
+        <app-comunidade-form></app-comunidade-form>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 overflow-y" id="posts">
+
+        <div *ngFor="let item of posts; index as i">
+            <div class="card">
+                <div class="header">
+                    <div class="d-flex justify-content-start">
+                        <img class="mr-3 rounded-circle" [src]="item.Usuario?.Imagem.Base64" height="48" alt="" />
+                        <div class="d-flex w-100 justify-content-between">
+                            <div>
+                                <h6 class="m-0 pt-2">{{ item.Usuario.Nome }}</h6>
+                                <small>{{ item.Hora }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="img-fluid w-100 h-50" src="assets/img/background/bg_1.png" alt="" />
+                <div class="body">
+                    <p class="text-justify">{{ item.Descricao }}</p>
+                    <div class="d-flex justify-content-between mt-3">
+
+                        <a *ngIf="item.Likes == 0" href="javascript:void(0)" (click)="liked(item.ID, alike)" #alike class="nav-link p-0 d-flex align-items-center"><i class="material-icons mr-1 text-muted">thumb_up</i><span>{{item.Likes}}</span></a>
+                        <a *ngIf="item.Likes != 0" href="javascript:void(0)" (click)="liked(item.ID, alike)" #alike class="nav-link p-0 d-flex align-items-center"><i class="material-icons mr-1 text-primary">thumb_up</i><span>{{item.Likes}}</span></a>
+
+                        <a *ngIf="item.Comments == 0" href="javascript:void(0)" (click)="openModal(template, item)" class="nav-link p-0 d-flex align-items-center"><i class="material-icons mr-1 text-muted">comment</i><span>{{item.Comments}}</span></a>
+                        <a *ngIf="item.Comments != 0" href="javascript:void(0)" (click)="openModal(template, item)" class="nav-link p-0 d-flex align-items-center"><i class="material-icons mr-1 text-success">comment</i><span>{{item.Comments}}</span></a>
+
+                        <a *ngIf="item.Deslikes == 0" href="javascript:void(0)" (click)="desliked(item.ID)" class="p-0 d-flex flex-row-reverse align-items-center"><i class="material-icons ml-1 text-muted">thumb_down</i><span>{{item.Deslikes}}</span></a>
+                        <a *ngIf="item.Deslikes != 0" href="javascript:void(0)" (click)="desliked(item.ID)" class="p-0 d-flex flex-row-reverse align-items-center"><i class="material-icons ml-1 text-danger">thumb_down</i><span>{{item.Deslikes}}</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #template>
+    <div class="modal-body">
+
+        <div class="card">
+            <div class="body">
+                <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                    <div class="input-group input-group-sm m-0">
+                        <input type="text" class="form-control" placeholder="Escreva sua mensagem aqui ..." formControlName="descricao" [ngClass]="aplicaCssErro('descricao')">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary d-flex align-items-center" type="submit">
+                                <i class="material-icons text-white ">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header" *ngFor="let comt of comentarios">
+                <div class="d-flex justify-content-start">
+                    <img class="mr-3 rounded-circle" src="assets/img/user.jpg" height="40" alt="User" />
+                    <div class="d-flex w-100 justify-content-between">
+                        <div>
+                            <h6 class="m-0 font-weight-bold">{{comt.Usuario.Nome}}
+                                <span class="px-1">-</span>
+                                <small class="text-primary font-weight-bold f-14">{{comt.Hora}}</small>
+                            </h6>
+                            <p class="f-14 m-0 text-justify">{{comt.Descricao}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

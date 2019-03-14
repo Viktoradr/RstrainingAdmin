@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="header bg-primary d-flex">
+        <div class="w-100">
+            <h2>Cadastrar <small>Usuário</small></h2>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="formNome">Nome</label>
+                <input type="text" class="form-control form-control-sm" id="formNome" name="formNome">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="formEmail">Email</label>
+                <input type="email" class="form-control form-control-sm" id="formEmail" name="formEmail">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formSenha">Senha</label>
+                <input type="password" class="form-control form-control-sm" id="formSenha" name="formSenha">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formRepetirSenha">Repetir Senha</label>
+                <input type="password" class="form-control form-control-sm" id="formRepetirSenha" name="formRepetirSenha">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formPerfil">Perfil</label>
+                <select class="form-control form-control-sm" id="formPerfil" name="formPerfil">
+                        <option value="0">Selecione...</option>
+                        <option *ngFor="let item of listas.ListaPerfil" [value]="item.ID"> {{ item.Nome }}</option>
+                    </select>
+            </div>
+        </div>
+
+    </div>
+</div>

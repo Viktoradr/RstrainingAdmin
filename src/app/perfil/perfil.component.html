@@ -1,0 +1,197 @@
+<div class="row">
+    <div class="col-md-12 col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="mx-auto d-block">
+                    <img class="rounded-circle mx-auto d-block" height="160" src="assets/img/user.jpg" alt="">
+                    <h5 class="text-center mt-4 mb-1"><span>{{ usuario.Nome }}</span></h5>
+                    <div class="text-center"><span>{{ usuario.Email }}</span></div>
+                </div>
+                <hr>
+                <div class="card-text text-center info">
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="m-0 text-primary">{{ sexo }}</h5>Sexo
+                        </div>
+                        <div class="col-4">
+                            <h5 class="m-0 text-primary">{{ usuario.Idade }}</h5>Idade
+                        </div>
+                        <div class="col-4">
+                            <h5 class="m-0 text-primary">{{ usuario.Altura }}</h5>Altura
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-text text-center">
+                    <a href="#"><i class="fa fa-facebook pr-2"></i></a>
+                    <a href="#"><i class="fa fa-twitter pr-2"></i></a>
+                    <a href="#"><i class="fa fa-linkedin pr-2"></i></a>
+                    <a href="#"><i class="fa fa-pinterest pr-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 p-0">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header bg-primary d-flex">
+                    <div class="w-100">
+                        <h2>Informações do Usuário <small>Mantenha suas informações atualizadas...</small></h2>
+                    </div>
+
+                    <a class="nav-link pr-0" href="javascript:void(0);" (click)="editarUsuario()">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </div>
+                <div class="body">
+                    <div class="card-text">
+                        <div class="row f-14">
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">Calorias Diárias </h6>
+                                <p><span>{{ meta }}</span> kcal</p>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">IMC </h6>
+                                <p><span>{{ imc }} - {{ condicao }}</span></p>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">Peso Corporal</h6>
+                                <p><span>{{ usuario.PesoCorporal }}</span> Kg</p>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">Peso Alvo</h6>
+                                <p><span>{{ usuario.PesoAlvo }}</span> Kg</p>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">Objetivo</h6>
+                                <p><span>{{ usuario.Objetivo.Nome }}</span></p>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h6 class="text-primary">Nível de Atividade</h6>
+                                <p><span>{{ usuario.Atividade.Nome }}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header bg-primary d-flex">
+                    <div class="w-100">
+                        <h2>Medidas <small>Mantenha suas medidas atualizadas...</small></h2>
+                    </div>
+
+                    <a class="nav-link pr-0" href="javascript:void(0);" data-toggle="modal" data-target="#modalCadMedidas">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-title font-weight-bold text-primary">Membros Superiores</div>
+                            <div class="row f-14">
+                                <div class="col">
+                                    <span class="text-primary">Braço E</span>
+                                    <p><span id="UBracoEsquerdo">{{ medida.BracoEsquerdo }}</span> cm</p>
+                                    <span class="text-primary">Braço D</span>
+                                    <p><span id="UBracoDireito">{{ medida.BracoDireito }}</span> cm</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-primary">Antebraço E</span>
+                                    <p><span id="UAntebracoEsquerdo">{{ medida.AntebracoEsquerdo }}</span> cm</p>
+                                    <span class="text-primary">Antebraço D</span>
+                                    <p><span id="UAntebracoDireito">{{ medida.AntebracoDireito }}</span> cm</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-primary">Torax</span>
+                                    <p><span id="UTorax">{{ medida.Torax }}</span> cm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card-title font-weight-bold text-primary">Membros Inferiores</div>
+                            <div class="row f-14">
+                                <div class="col">
+                                    <span class="text-primary">Quadril</span>
+                                    <p><span id="UQuadril">{{ medida.Quadril }}</span> cm</p>
+                                    <span class="text-primary">Cintura</span>
+                                    <p><span id="UCintura">{{ medida.Cintura }}</span> cm</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-primary">Coxa E</span>
+                                    <p><span id="UCoxaEsquerda">{{ medida.CoxaEsquerda }}</span> cm</p>
+                                    <span class="text-primary">Coxa D</span>
+                                    <p><span id="UCoxaDireita">{{ medida.CoxaDireita }}</span> cm</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-primary">Perna E</span>
+                                    <p><span id="UPernaEsquerda">{{ medida.PernaEsquerda }}</span> cm</p>
+                                    <span class="text-primary">Perna D</span>
+                                    <p><span id="UPernaDireira">{{ medida.PernaDireita }}</span> cm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalCadMedidas" tabindex="-1" role="dialog" aria-labelledby="modalCadMedidasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Medidas</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-row" [formGroup]="formulario" (ngSubmit)="onSubmit()" #form="ngForm">
+                    <div class="header font-weight-bold text-primary col-12">Membros Superiores</div>
+
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Braço Esquerdo" formControlName="BracoEsquerdo" [ngClass]="aplicaCssErro('BracoEsquerdo')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Braço Direito" formControlName="BracoDireito" [ngClass]="aplicaCssErro('BracoDireito')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Antebraço Esquerdo" formControlName="AntebracoEsquerdo" [ngClass]="aplicaCssErro('AntebracoEsquerdo')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Antebraço Direito" formControlName="AntebracoDireito" [ngClass]="aplicaCssErro('AntebracoDireito')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Torax" formControlName="Torax" [ngClass]="aplicaCssErro('Torax')">
+                    </div>
+
+                    <div class="header font-weight-bold text-primary col-12">Membros Inferiores</div>
+
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Quadril" formControlName="Quadril" [ngClass]="aplicaCssErro('Quadril')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Cintura" formControlName="Cintura" [ngClass]="aplicaCssErro('Cintura')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Coxa Esquerda" formControlName="CoxaEsquerda" [ngClass]="aplicaCssErro('CoxaEsquerda')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Coxa Direita" formControlName="CoxaDireita" [ngClass]="aplicaCssErro('CoxaDireita')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Perna Esquerda" formControlName="PernaEsquerda" [ngClass]="aplicaCssErro('PernaEsquerda')">
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Perna Direita" formControlName="PernaDireita" [ngClass]="aplicaCssErro('PernaDireita')">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                <button type="button" (click)="form.ngSubmit.emit()" class="btn btn-primary btn-sm" data-dismiss="modal">Adicionar</button>
+            </div>
+        </div>
+    </div>
+</div>

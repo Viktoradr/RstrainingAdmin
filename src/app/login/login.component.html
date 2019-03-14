@@ -1,0 +1,24 @@
+<main>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="card pt-3 px-3 login">
+                <div class="card-body">
+                    <div class="form-group">
+                        <input [(ngModel)]="usuario.Email" type="text" id="inputEmail" class="form-control form-control-sm" placeholder="Email" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input [(ngModel)]="usuario.Senha" type="password" id="inputSenha" class="form-control form-control-sm" placeholder="Senha" required>
+                    </div>
+
+                    <a class="nav-link p-0 mb-3" href="javascript:void(0);">Esqueci minha senha ?</a>
+
+                    <div class="d-flex flex-row">
+                        <button class="btn btn-sm btn-outline-primary mr-1 w-50" type="button">Cadastrar</button>
+                        <button class="btn btn-sm btn-primary bg-roxo-claro ml-1 w-50" type="submit" (click)="fazerLogin()">Logar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

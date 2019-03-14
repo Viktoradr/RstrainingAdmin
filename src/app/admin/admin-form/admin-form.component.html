@@ -1,0 +1,24 @@
+<form class="form-row p-3" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group col-12 col-md-6">
+        <label for="tipo" class="col-form-label">Listas</label>
+        <select class="form-control form-control-sm" formControlName="tipo" id="tipo" [ngClass]="aplicaCssErro('tipo')">
+                  <option value="0">Selecione...</option>
+                  <option value="1">Perfil</option>
+                  <option value="2">Exercício</option>
+                  <option value="3">Plano</option>
+                  <option value="4">Observação</option>
+                  <option value="5">Objetivo</option>
+                  <option value="6">Grupo de Ficha</option>
+                  <option value="7">Ficha</option>
+                  <option value="8">Atividade</option>
+              </select>
+    </div>
+    <div class="form-group col-12 col-md-6">
+        <label for="descricao" class="col-form-label">Descrição</label>
+        <input type="text" class="form-control form-control-sm" formControlName="descricao" id="descricao" [ngClass]="aplicaCssErro('descricao')">
+    </div>
+
+    <div class="flex-row col-12">
+        <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+    </div>
+</form>

@@ -1,0 +1,180 @@
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-6">
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Área de Administração <small>Área especializada para manuntenção do sistema...</small></h2>
+                </div>
+
+                <a class="nav-link pr-0" [routerLink]="['Novo']">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+            <div class="body p-0">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-6">
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Perfis <small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaPerfil">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" href="javascript:void(0);"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Planos <small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoPlano">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Plano', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Observacões <small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoObservacao">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Observacao', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Objetivos <small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoObjetivo">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Objetivo', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Tipo Grupo Ficha <small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoGrupoFicha">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Objetivo', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Tipo Ficha<small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoFicha">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Objetivo', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Atividades<small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaTipoAtividade">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Objetivo', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Exercicios<small>Utilizado para identificar os usuários no sistema</small></h2>
+                </div>
+            </div>
+            <div class="body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 px-3" *ngFor="let item of listas.ListaExercicio">
+                        {{item.Nome}}
+                        <div class="d-flex flex-row">
+                            <a class="nav-link pr-0" [routerLink]="[item.ID, 'Objetivo', 'Editar']"><i class="material-icons">edit</i></a>
+                            <a class="nav-link pr-0" href="javascript:void(0);" (click)="deletarItem(item)"><i class="material-icons text-danger">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>

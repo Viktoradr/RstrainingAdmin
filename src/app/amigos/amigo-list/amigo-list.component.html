@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12 col-md-6">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="col-12 col-md-6">
+
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Amigos <small>lista de amigos</small></h2>
+                </div>
+
+                <a class="nav-link pr-0" [routerLink]="['Novo']">
+                    <i class="material-icons">person_add</i>
+                </a>
+            </div>
+            <div class="body p-0">
+                <div class="p-3" *ngIf="amigos.length == 0">Não existe itens para serem exibidos</div>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action rounded-0" *ngFor="let item of amigos">
+                        <div class="d-flex justify-content-start">
+                            <img class="mr-3 rounded-circle" [src]="item.Usuario.Imagem.Base64" height="48" alt="User" />
+                            <div class="d-flex w-100 flex-column">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ item.Usuario.Nome }}</h5>
+                                    <small>{{ item.Usuario.Perfil?.Nome }}</small>
+                                </div>
+                                <p class="mb-1">{{ item.Usuario.Email }}</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

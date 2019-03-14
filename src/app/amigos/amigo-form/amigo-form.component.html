@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="header bg-primary d-flex">
+        <div class="w-100">
+            <h2>Adicionar <small>Amigo</small></h2>
+        </div>
+    </div>
+    <div class="body">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" type="submit">Adicionar</button>
+                </div>
+                <select class="custom-select custom-select-sm f-14" formControlName="AmigoID" id="AmigoID" [ngClass]="aplicaCssErro('AmigoID')">
+                    <option value="0" selected>Selecione...</option>
+                    <option *ngFor="let item of amigos" [value]="item.Usuario.ID"> {{item.Usuario.Nome}} </option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>

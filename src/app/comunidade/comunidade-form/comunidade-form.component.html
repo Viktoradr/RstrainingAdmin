@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="header bg-primary d-flex">
+        <div class="w-100">
+            <h2>Adicionar<small>Novo Post</small></h2>
+        </div>
+
+        <a (click)="aparecer = !aparecer;">
+            <i *ngIf="!aparecer" class="material-icons">keyboard_arrow_up</i>
+            <i *ngIf="aparecer" class="material-icons">keyboard_arrow_down</i>
+        </a>
+    </div>
+    <div class="body" *ngIf="aparecer">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Descrição</label>
+                    <textarea type="text" class="form-control form-control-sm no-resize" rows="6" formControlName="descricao" [ngClass]="aplicaCssErro('descricao')"></textarea>
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <button id="btnPostar" type="submit" class="btn btn-primary btn-sm">Postar</button>
+            </div>
+        </form>
+    </div>
+</div>

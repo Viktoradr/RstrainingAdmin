@@ -1,0 +1,81 @@
+<div class="card">
+    <div class="header bg-primary d-flex">
+        <div class="w-100">
+            <h2>Edição <small>Usuário</small></h2>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="formID">Usuario ID</label>
+                <input type="number" class="form-control form-control-sm" min="0" id="formID" name="formID">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formIdade">Idade</label>
+                <input type="number" class="form-control form-control-sm" min="15" id="formIdade" name="formIdade">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formSexo">Sexo</label>
+                <select class="form-control form-control-sm" id="formSexo" name="formSexo">
+                        <option value="1" checked>Masculino</option>
+                        <option value="0">Femenino</option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-1">
+                <label for="formAltura">Altura</label>
+                <input type="text" data-mask="0.00" class="form-control form-control-sm" min="0" id="formAltura" name="formAltura">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="formInfoPerfil">Perfil</label>
+                <select class="form-control form-control-sm" id="formInfoPerfil" name="formInfoPerfil">
+                        <option value="0">Selecione...</option>
+                        <option *ngFor="let item of listas.ListaPerfil" [value]="item.ID"></option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="formPesoCorporal">Peso Corporal</label>
+                <input type="number" class="form-control form-control-sm" min="0" id="formPesoCorporal" name="formPesoCorporal">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="formPesoAlvo">Peso Alvo</label>
+                <input type="number" class="form-control form-control-sm" min="0" id="formPesoAlvo" name="formPesoAlvo">
+            </div>
+
+            <div class="form-group col-md-1">
+                <label for="formAtivo">Ativo?</label>
+                <select class="form-control form-control-sm" id="formAtivo" name="formAtivo">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="formObjetivo">Objetivo</label>
+                <select class="form-control form-control-sm" id="formObjetivo" name="formObjetivo">
+                        <option value="0">Selecione...</option>
+                        <option *ngFor="let item of listas.ListaTipoObjetivo" [value]="item.ID"></option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="formAtividade">Nível de Atividade</label>
+                <select class="form-control form-control-sm" id="formAtividade" name="formAtividade">
+                        <option value="0">Selecione...</option>
+                        <option *ngFor="let item of listas.ListaTipoAtividade" [value]="item.ID"></option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="flex-row">
+            <button id="btnSalvarUsuario" type="button" class="btn btn-primary btn-sm">Salvar Informações</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="header">
+        <h2>Basic Card Title <small>Description text here...</small></h2>
+    </div>
+    <div class="body">
+
+        <form class="form-row">
+            <div class="form-group col-12 col-sm-6 col-md-4">
+                <label class="col-form-label">Início e Fim</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Escolha as datas" bsDaterangepicker placement="right" [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-dark-blue' }">
+            </div>
+
+            <div class="form-group col-12 col-sm-6 col-md-4">
+                <label for="formExercicios" class="col-form-label">Exercícios</label>
+                <select class="form-control form-control-sm" id="formExercicios">
+                    <option value="0">Selecione...</option>
+                </select>
+            </div>
+
+            <div class="form-group col-12 col-sm-4 col-md-3">
+                <label for="formObs" class="col-form-label">Observação</label>
+                <select class="form-control form-control-sm" id="formObs">
+                    <option value="0">Selecione...</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <button id="btnBuscar" type="button" class="btn btn-primary btn-sm">Buscar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="header d-flex">
+        <h2 id="ExercicioNome">Nome do Exercício <small>Description text here...</small></h2>
+    </div>
+    <div class="body">
+        <hr class="my-4">
+        <div id="graph"></div>
+    </div>
+</div>

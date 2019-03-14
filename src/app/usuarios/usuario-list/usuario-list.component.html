@@ -1,0 +1,49 @@
+<div class="row mt-3">
+
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card">
+            <div class="header bg-primary d-flex">
+                <div class="w-100">
+                    <h2>Usuários <small>Criação e edição de usuários</small></h2>
+                </div>
+
+                <a class="nav-link pr-0" [routerLink]="['Novo']">
+                    <i class="material-icons">person_add</i>
+                </a>
+                <a class="nav-link pr-0" [routerLink]="['Novo', 'Professor']">
+                    <i class="material-icons">school</i>
+                </a>
+            </div>
+            <div class="body p-0">
+                <div class="p-3" *ngIf="usuarios.length == 0">Não existe itens para serem exibidos</div>
+                <div class="list-group">
+                    <div class="list-group">
+                        <button [routerLink]="[item.ID]" type="button" class="list-group-item list-group-item-action rounded-0" *ngFor="let item of usuarios">
+                            <div class="d-flex justify-content-start">
+                                <img class="mr-3 rounded-circle" src="assets/img/user.jpg" height="48" alt="User" />
+                                <div class="d-flex w-100 justify-content-between">
+                                    
+                                    <div class="d-flex flex-column"> 
+                                        <h5 class="mb-1">{{ item.Nome }}</h5>
+                                        <p class="mb-1">{{ item.Email }}</p>
+                                        <small>{{ item.Perfil?.Nome }}</small>
+                                    </div>
+                                   
+                                    <div class="d-flex">
+                                        <a class="nav-link pr-0" [routerLink]="[item.ID ,'Editar']">
+                                            <i class="material-icons align-self-center">edit</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

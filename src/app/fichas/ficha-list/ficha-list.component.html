@@ -1,0 +1,31 @@
+<app-ficha-form></app-ficha-form>
+
+<div class="card">
+    <div class="header d-flex">
+        <div class="w-100">
+            <h2>Séries <small>Mantenha suas informações atualizadas...</small></h2>
+        </div>
+
+        <div class="btn-group" dropdown>
+            <a href id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown2">
+                <i class="material-icons ">more_vert</i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu role="menu" aria-labelledby="basic-link-dropdown2">
+                <a class="dropdown-item" href="javascript:void(0);" id="Compartilhar">Compartilhar</a>
+                <a class="dropdown-item" href="javascript:void(0);" id="Favoritar">Favoritar</a>
+                <a class="dropdown-item" href="javascript:void(0);" id="Ativar">Ativar/Desativar</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-6 p-0 border-right">
+                <div class="list-group" id="ListaFichas" role="tablist"></div>
+            </div>
+
+            <div class="col-12 col-md-6 p-0">
+                <div class="tab-content" id="ListaExercicios"></div>
+            </div>
+        </div>
+    </div>
+</div>
